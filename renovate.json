@@ -4,17 +4,18 @@
   ],
   "reviewers": [
     "drazisil"
-  ],
+  ],  
   "packageRules": [
     {
       "matchDepTypes": ["devDependencies"],
-      "matchPackagePatterns": ["lint", "prettier"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "groupName": "devDependencies (non-major)",
       "automerge": true
     },
     {
-      "matchUpdateTypes": ["minor", "patch"],
-      "matchCurrentVersion": "!/^0/",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "groupName": "dependencies (non-major)",
       "automerge": true
-    }
-  ]  
+    }              
+  ]
 }
